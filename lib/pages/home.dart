@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "How can i help you?",
+                        hintText: "How can i help you? 13:00",
                         hintStyle: TextStyle(color: Colors.black45),
                         suffixIcon: Icon(
                           Icons.search,
