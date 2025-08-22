@@ -12,8 +12,8 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Services"),
-        backgroundColor: Colors.orange, // Optional: make it visible
+        title: Text("Services",style:TextStyle(color: Colors.white),),
+        backgroundColor: Color(0xff284a79), // Optional: make it visible
         elevation: 4,
       ),
       body: Container(
