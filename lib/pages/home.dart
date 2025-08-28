@@ -12,7 +12,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Services",style:TextStyle(color: Colors.white),),
+        title: Text("Services", style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xff284a79), // Optional: make it visible
         elevation: 4,
       ),
@@ -70,11 +70,14 @@ class _HomeState extends State<Home> {
                   Container(
                     padding: EdgeInsets.only(left: 20.0),
                     width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(color: Colors.white),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: TextField(
                       decoration: InputDecoration(
                         border: InputBorder.none,
-                        hintText: "How can i help you? 13:00",
+                        hintText: "How can i help you?",
                         hintStyle: TextStyle(color: Colors.black45),
                         suffixIcon: Icon(
                           Icons.search,
@@ -82,6 +85,38 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                     ),
+                  ),
+                  //Adding images of the category e:g, Painter, Electrician etc..
+                  SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(60),
+                        ),
+                        child: Column(
+                          children: [
+                            Image.asset(
+                              "images/laundry.jpg",
+                              height: 45,
+                              width: 45,
+                              fit: BoxFit.cover,
+                            ),
+                            //Adding text to the image after converting the image to a Column
+                            Text(
+                              'Cleaning',
+                              style: TextStyle(
+                                color: Color(0xff284a79),
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
