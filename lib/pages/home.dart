@@ -18,6 +18,7 @@ class _HomeState extends State<Home> {
       ),
       body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               padding: EdgeInsets.only(top: 40.0, left: 20.0, right: 20.0),
@@ -57,6 +58,7 @@ class _HomeState extends State<Home> {
                       ),
                     ],
                   ),
+
                   Text(
                     'Which service do you need',
                     style: TextStyle(
@@ -65,6 +67,7 @@ class _HomeState extends State<Home> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+
                   // Adding a search bar to the service below
                   SizedBox(height: 20.0),
                   Container(
@@ -86,6 +89,7 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                   ),
+
                   //Adding images of the category e:g, Painter, Electrician etc..
                   SizedBox(height: 20),
                   Row(
@@ -105,21 +109,21 @@ class _HomeState extends State<Home> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                            //Adding text to the image after converting the image to a Column
-                            SizedBox(height: 5.0,),
-                            Text(
-                              'Cleaning',
-                              style: TextStyle(
-                                color: Color(0xff284a79),
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          //Adding text to the image after converting the image to a Column
+                          SizedBox(height: 5.0),
+                          Text(
+                            'Laundry',
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
                             ),
+                          ),
                         ],
                       ),
-                      SizedBox(width: 20.0,),
-                      //Adding the second column after copying 
-                       Column(
+                      SizedBox(width: 20.0),
+                      //Adding the second column after copying
+                      Column(
                         children: [
                           Container(
                             padding: EdgeInsets.all(10),
@@ -134,21 +138,21 @@ class _HomeState extends State<Home> {
                               fit: BoxFit.cover,
                             ),
                           ),
-                            //Adding text to the image after converting the image to a Column
-                            SizedBox(height: 5.0,),
-                            Text(
-                              'Painting',
-                              style: TextStyle(
-                                color: Color(0xff284a79),
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          //Adding text to the image after converting the image to a Column
+                          SizedBox(height: 5.0),
+                          Text(
+                            'Painting',
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
                             ),
+                          ),
                         ],
                       ),
-                        SizedBox(width: 20.0,),
-                      //Adding the second column after copying 
-                       Column(
+                      SizedBox(width: 20.0),
+                      //Adding the second column after copying
+                      Column(
                         children: [
                           Container(
                             padding: EdgeInsets.all(10),
@@ -157,27 +161,27 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(60),
                             ),
                             child: Image.asset(
-                              "images/painting.jpg",
+                              "images/cleaning.jpg",
                               height: 45,
                               width: 45,
                               fit: BoxFit.cover,
                             ),
                           ),
-                            //Adding text to the image after converting the image to a Column
-                            SizedBox(height: 5.0,),
-                            Text(
-                              'Painting',
-                              style: TextStyle(
-                                color: Color(0xff284a79),
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          //Adding text to the image after converting the image to a Column
+                          SizedBox(height: 5.0),
+                          Text(
+                            'Cleaning',
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
                             ),
+                          ),
                         ],
                       ),
-                        SizedBox(width: 20.0,),
-                      //Adding the second column after copying 
-                       Column(
+                      SizedBox(width: 20.0),
+                      //Adding the second column after copying
+                      Column(
                         children: [
                           Container(
                             padding: EdgeInsets.all(10),
@@ -186,29 +190,46 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(60),
                             ),
                             child: Image.asset(
-                              "images/painting.jpg",
+                              "images/repair.jpg",
                               height: 45,
                               width: 45,
                               fit: BoxFit.cover,
                             ),
                           ),
-                            //Adding text to the image after converting the image to a Column
-                            SizedBox(height: 5.0,),
-                            Text(
-                              'Painting',
-                              style: TextStyle(
-                                color: Color(0xff284a79),
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          //Adding text to the image after converting the image to a Column
+                          SizedBox(height: 5.0),
+                          Text(
+                            'Repearing',
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.bold,
                             ),
+                          ),
                         ],
                       ),
                     ],
                   ),
+                  SizedBox(height: 20.0),
                 ],
               ),
             ),
+            //We are outdide the container
+            Padding(
+              padding: const EdgeInsets.only(left: 22.0, top: 20.0),
+              child: Text(
+                "Popular Services",
+                style: TextStyle(
+                  color: Color(0xff284a79),
+                  fontSize: 22.0,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            //Passing a container to it
+            Container(
+              width: MediaQuery.of(context).size.width,
+            )
           ],
         ),
       ),
