@@ -90,20 +90,21 @@ class _HomeState extends State<Home> {
                   SizedBox(height: 20),
                   Row(
                     children: [
-                      Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(60),
-                        ),
-                        child: Column(
-                          children: [
-                            Image.asset(
+                      Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(60),
+                            ),
+                            child: Image.asset(
                               "images/laundry.jpg",
                               height: 45,
                               width: 45,
                               fit: BoxFit.cover,
                             ),
+                          ),
                             //Adding text to the image after converting the image to a Column
                             Text(
                               'Cleaning',
@@ -113,8 +114,7 @@ class _HomeState extends State<Home> {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                          ],
-                        ),
+                        ],
                       ),
                     ],
                   ),
