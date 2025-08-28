@@ -106,8 +106,96 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                             //Adding text to the image after converting the image to a Column
+                            SizedBox(height: 5.0,),
                             Text(
                               'Cleaning',
+                              style: TextStyle(
+                                color: Color(0xff284a79),
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                        ],
+                      ),
+                      SizedBox(width: 20.0,),
+                      //Adding the second column after copying 
+                       Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(60),
+                            ),
+                            child: Image.asset(
+                              "images/painting.jpg",
+                              height: 45,
+                              width: 45,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                            //Adding text to the image after converting the image to a Column
+                            SizedBox(height: 5.0,),
+                            Text(
+                              'Painting',
+                              style: TextStyle(
+                                color: Color(0xff284a79),
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                        ],
+                      ),
+                        SizedBox(width: 20.0,),
+                      //Adding the second column after copying 
+                       Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(60),
+                            ),
+                            child: Image.asset(
+                              "images/painting.jpg",
+                              height: 45,
+                              width: 45,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                            //Adding text to the image after converting the image to a Column
+                            SizedBox(height: 5.0,),
+                            Text(
+                              'Painting',
+                              style: TextStyle(
+                                color: Color(0xff284a79),
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                        ],
+                      ),
+                        SizedBox(width: 20.0,),
+                      //Adding the second column after copying 
+                       Column(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(60),
+                            ),
+                            child: Image.asset(
+                              "images/painting.jpg",
+                              height: 45,
+                              width: 45,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                            //Adding text to the image after converting the image to a Column
+                            SizedBox(height: 5.0,),
+                            Text(
+                              'Painting',
                               style: TextStyle(
                                 color: Color(0xff284a79),
                                 fontSize: 16.0,
