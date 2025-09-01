@@ -226,7 +226,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            //Passing a container to it
+            //Passing a container to create a new box of category
             SizedBox(height: 20.0),
             Container(
               padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
@@ -286,7 +286,7 @@ class _HomeState extends State<Home> {
                       Row(
                         children: [
                           Container(
-                            padding:EdgeInsets.all(5),
+                            padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 94, 172, 202),
                             ),
@@ -294,7 +294,7 @@ class _HomeState extends State<Home> {
                               "₦2500/Hour",
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 18.0,
+                                fontSize: 16.0,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
