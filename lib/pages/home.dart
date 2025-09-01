@@ -229,7 +229,7 @@ class _HomeState extends State<Home> {
             //Passing a container to it
             SizedBox(height: 20.0),
             Container(
-              padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0),
+              padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
               margin: EdgeInsets.only(left: 20.0, right: 20.0),
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
@@ -237,6 +237,7 @@ class _HomeState extends State<Home> {
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
@@ -247,13 +248,61 @@ class _HomeState extends State<Home> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  Column(children: [
-                    Row(
-                      children: [
-                        Icon(Icons.star,color: Colors.orange,)
-                      ],
-                    )
-                  ],)
+                  SizedBox(width: 10.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.orange),
+                          SizedBox(width: 5.0),
+                          Text(
+                            "4.5",
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5.0),
+                      Text(
+                        "Home Cleaning",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "by Ola Sharma",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            padding:EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 94, 172, 202),
+                            ),
+                            child: Text(
+                              "₦2500/Hour",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
