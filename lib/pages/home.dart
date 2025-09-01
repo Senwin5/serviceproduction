@@ -27,7 +27,7 @@ class _HomeState extends State<Home> {
                 gradient: LinearGradient(
                   colors: [
                     Color(0xfff7f9fa),
-                    Color.fromARGB(255, 235, 237, 238),
+                    Color.fromARGB(255, 197, 227, 244),
                   ],
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
@@ -227,7 +227,36 @@ class _HomeState extends State<Home> {
               ),
             ),
             //Passing a container to it
-            Container(width: MediaQuery.of(context).size.width),
+            SizedBox(height: 20.0),
+            Container(
+              padding: EdgeInsets.only(left: 20.0, top: 10.0, bottom: 10.0),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 197, 227, 244),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      "images/post.jpg",
+                      height: 120,
+                      width: 90,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  Column(children: [
+                    Row(
+                      children: [
+                        Icon(Icons.star,color: Colors.orange,)
+                      ],
+                    )
+                  ],)
+                ],
+              ),
+            ),
           ],
         ),
       ),
