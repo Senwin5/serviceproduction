@@ -227,9 +227,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             //Passing a container to it
-            Container(
-              width: MediaQuery.of(context).size.width,
-            )
+            Container(width: MediaQuery.of(context).size.width),
           ],
         ),
       ),
