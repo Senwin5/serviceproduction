@@ -276,7 +276,7 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Text(
-                        "by Ola Sharma",
+                        "by Ola Sharmas",
                         style: TextStyle(
                           color: Color(0xff284a79),
                           fontSize: 15.0,
