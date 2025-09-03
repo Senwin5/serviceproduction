@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Color(0xff284a79), // Optional: make it visible
         elevation: 4,
       ),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -50,7 +50,7 @@ class _HomeState extends State<Home> {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(50),
                         child: Image.asset(
-                          'images/post.jpg',
+                          'asset/images/post.jpg',
                           height: 60,
                           width: 55,
                           fit: BoxFit.cover,
@@ -103,7 +103,7 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(60),
                             ),
                             child: Image.asset(
-                              "images/laundry.jpg",
+                              "asset/images/laundry.jpg",
                               height: 45,
                               width: 45,
                               fit: BoxFit.cover,
@@ -132,7 +132,7 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(60),
                             ),
                             child: Image.asset(
-                              "images/painting.jpg",
+                              "asset/images/painting.jpg",
                               height: 45,
                               width: 45,
                               fit: BoxFit.cover,
@@ -161,7 +161,7 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(60),
                             ),
                             child: Image.asset(
-                              "images/cleaning.jpg",
+                              "asset/images/cleaning.jpg",
                               height: 45,
                               width: 45,
                               fit: BoxFit.cover,
@@ -190,7 +190,7 @@ class _HomeState extends State<Home> {
                               borderRadius: BorderRadius.circular(60),
                             ),
                             child: Image.asset(
-                              "images/repair.jpg",
+                              "asset/images/repair.jpg",
                               height: 45,
                               width: 45,
                               fit: BoxFit.cover,
@@ -242,7 +242,217 @@ class _HomeState extends State<Home> {
                   ClipRRect(
                     borderRadius: BorderRadius.circular(10),
                     child: Image.asset(
-                      "images/post.jpg",
+                      "asset/images/post.jpg",
+                      height: 120,
+                      width: 90,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(width: 10.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.orange),
+                          SizedBox(width: 5.0),
+                          Text(
+                            "4.5",
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5.0),
+                      Text(
+                        "Laundry",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "by Ola Sharmas",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 10.0,),
+                      Row(
+                        children: [
+                          Container(
+                            //width: 0,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 94, 172, 202),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text(
+                                "₦2500/Hour",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          //Copying the container and paste again
+                          SizedBox(width:20.0,),
+                          Container(
+                            //width: 0,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color(0xff284a79),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Book Now",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+             //Passing a container to create a new box of category
+            SizedBox(height: 20.0),
+            Container(
+              padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 197, 227, 244),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      "asset/images/painter.jpeg",
+                      height: 120,
+                      width: 90,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(width: 10.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.orange),
+                          SizedBox(width: 5.0),
+                          Text(
+                            "4.5",
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5.0),
+                      Text(
+                        "Painting",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "by Jacob",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 10.0,),
+                      Row(
+                        children: [
+                          Container(
+                            //width: 0,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 94, 172, 202),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text(
+                                "₦2500/Hour",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          //Copying the container and paste again
+                          SizedBox(width:20.0,),
+                          Container(
+                            //width: 0,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color(0xff284a79),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Book Now",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+             //Passing a container to create a new box of category
+            SizedBox(height: 20.0),
+            Container(
+              padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 197, 227, 244),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      "asset/images/cleaner.jpeg",
                       height: 120,
                       width: 90,
                       fit: BoxFit.cover,
@@ -276,26 +486,156 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Text(
-                        "by Ola Sharmas",
+                        "by Kalus",
                         style: TextStyle(
                           color: Color(0xff284a79),
                           fontSize: 15.0,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
+                      SizedBox(height: 10.0,),
                       Row(
                         children: [
                           Container(
+                            //width: 0,
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 94, 172, 202),
+                              borderRadius: BorderRadius.circular(5)
                             ),
-                            child: Text(
-                              "₦2500/Hour",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
+                            child: Center(
+                              child: Text(
+                                "₦2500/Hour",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          //Copying the container and paste again
+                          SizedBox(width:20.0,),
+                          Container(
+                            //width: 0,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color(0xff284a79),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Book Now",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+             //Passing a container to create a new box of category
+            SizedBox(height: 20.0),
+            Container(
+              padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
+              margin: EdgeInsets.only(left: 20.0, right: 20.0),
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 197, 227, 244),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(10),
+                    child: Image.asset(
+                      "asset/images/repairier.jpeg",
+                      height: 120,
+                      width: 90,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  SizedBox(width: 10.0),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Icon(Icons.star, color: Colors.orange),
+                          SizedBox(width: 5.0),
+                          Text(
+                            "4.5",
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 5.0),
+                      Text(
+                        "Repairing",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "by Temu",
+                        style: TextStyle(
+                          color: Color(0xff284a79),
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(height: 10.0,),
+                      Row(
+                        children: [
+                          Container(
+                            //width: 0,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 94, 172, 202),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text(
+                                "₦2500/Hour",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          //Copying the container and paste again
+                          SizedBox(width:20.0,),
+                          Container(
+                            //width: 0,
+                            padding: EdgeInsets.all(5),
+                            decoration: BoxDecoration(
+                              color: Color(0xff284a79),
+                              borderRadius: BorderRadius.circular(5)
+                            ),
+                            child: Center(
+                              child: Text(
+                                "Book Now",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ),
