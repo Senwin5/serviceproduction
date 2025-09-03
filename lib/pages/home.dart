@@ -283,7 +283,7 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 10.0,),
+                      SizedBox(height: 10.0),
                       Row(
                         children: [
                           Container(
@@ -291,7 +291,7 @@ class _HomeState extends State<Home> {
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 94, 172, 202),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
@@ -305,13 +305,13 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           //Copying the container and paste again
-                          SizedBox(width:20.0,),
+                          SizedBox(width: 20.0),
                           Container(
                             //width: 0,
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color(0xff284a79),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
@@ -331,7 +331,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-             //Passing a container to create a new box of category
+            //Passing a container to create a new box of category
             SizedBox(height: 20.0),
             Container(
               padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
@@ -388,7 +388,7 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 10.0,),
+                      SizedBox(height: 10.0),
                       Row(
                         children: [
                           Container(
@@ -396,7 +396,7 @@ class _HomeState extends State<Home> {
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 94, 172, 202),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
@@ -410,13 +410,13 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           //Copying the container and paste again
-                          SizedBox(width:20.0,),
+                          SizedBox(width: 20.0),
                           Container(
                             //width: 0,
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color(0xff284a79),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
@@ -436,7 +436,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-             //Passing a container to create a new box of category
+            //Passing a container to create a new box of category
             SizedBox(height: 20.0),
             Container(
               padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
@@ -493,7 +493,7 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 10.0,),
+                      SizedBox(height: 10.0),
                       Row(
                         children: [
                           Container(
@@ -501,7 +501,7 @@ class _HomeState extends State<Home> {
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 94, 172, 202),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
@@ -515,13 +515,13 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           //Copying the container and paste again
-                          SizedBox(width:20.0,),
+                          SizedBox(width: 20.0),
                           Container(
                             //width: 0,
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color(0xff284a79),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
@@ -541,7 +541,7 @@ class _HomeState extends State<Home> {
                 ],
               ),
             ),
-             //Passing a container to create a new box of category
+            //Passing a container to create a new box of category
             SizedBox(height: 20.0),
             Container(
               padding: EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
@@ -598,7 +598,7 @@ class _HomeState extends State<Home> {
                           fontWeight: FontWeight.w500,
                         ),
                       ),
-                      SizedBox(height: 10.0,),
+                      SizedBox(height: 10.0),
                       Row(
                         children: [
                           Container(
@@ -606,7 +606,7 @@ class _HomeState extends State<Home> {
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color.fromARGB(255, 94, 172, 202),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
@@ -620,13 +620,13 @@ class _HomeState extends State<Home> {
                             ),
                           ),
                           //Copying the container and paste again
-                          SizedBox(width:20.0,),
+                          SizedBox(width: 20.0),
                           Container(
                             //width: 0,
                             padding: EdgeInsets.all(5),
                             decoration: BoxDecoration(
                               color: Color(0xff284a79),
-                              borderRadius: BorderRadius.circular(5)
+                              borderRadius: BorderRadius.circular(5),
                             ),
                             child: Center(
                               child: Text(
