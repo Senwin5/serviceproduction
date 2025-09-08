@@ -38,11 +38,11 @@ class _BottomNameNavState extends State<BottomNameNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: CurvedNavigationBar(
+      bottomNavigationBar:CurvedNavigationBar(
         height: 70,
         backgroundColor: Colors.white,
-        color: Colors.black,
-        animationDuration: Duration(milliseconds: 500),
+        color:Color(0xff284a79),
+        animationDuration: Duration(milliseconds: 400),
         onTap: (int index) {
           setState(() {
             currentTabIndex = index;
