@@ -14,6 +14,7 @@ class _BookPageState extends State<BookPage> {
       body: Container(
         margin: EdgeInsets.only(top: 40.0, left: 17.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             GestureDetector(
               onTap: () {
@@ -28,6 +29,18 @@ class _BookPageState extends State<BookPage> {
                 child: Icon(
                   Icons.arrow_back_ios_new_outlined,
                   color: Colors.white,
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    Color(0xfff7f9fa),
+                    Color.fromARGB(255, 197, 227, 244),
+                  ],
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
                 ),
               ),
             ),
