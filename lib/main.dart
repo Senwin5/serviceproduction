@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serviceproduction/pages/book_page.dart';
 import 'package:serviceproduction/pages/bottomnamenav.dart';
 import 'package:serviceproduction/pages/home.dart';
 
@@ -19,7 +20,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       //home: Home(),
-      home: BottomNameNav(),
+      //home: BottomNameNav(),
+      home: BookPage(),
     );
   }
 }
