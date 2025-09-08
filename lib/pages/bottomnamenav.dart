@@ -1,3 +1,4 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:serviceproduction/pages/chat_page.dart';
 import 'package:serviceproduction/pages/home.dart';
@@ -36,6 +37,25 @@ class _BottomNameNavState extends State<BottomNameNav> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      bottomNavigationBar: CurvedNavigationBar(
+        height: 70,
+        backgroundColor: Colors.white,
+        color: Colors.black,
+        animationDuration: Duration(milliseconds: 500),
+        onTap: (int index) {
+          setState(() {
+            currentTabIndex = index;
+          });
+        },
+        items: [
+          Icon(Icons.home_outlined, color: Colors.white, size: 25.0),
+          Icon(Icons.shop_outlined, color: Colors.white, size: 25.0),
+          Icon(Icons.chat_outlined, color: Colors.white, size: 25.0),
+          Icon(Icons.person, color: Colors.white, size: 25.0),
+        ],
+      ),
+      body: pages[currentTabIndex],
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serviceproduction/pages/bottomnamenav.dart';
 import 'package:serviceproduction/pages/home.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Home(),
+      //home: Home(),
+      home: BottomNameNav(),
     );
   }
 }
