@@ -129,8 +129,18 @@ class _BookPageState extends State<BookPage> {
                     ),
                   ),
                   SizedBox(height: 20.0),
-                  
                 ],
+              ),
+            ),
+            SizedBox(height: 20.0),
+            Text(
+              'Our home cleaning service ensures your space is spotless, fresh, and welcoming every time. '
+              'Whether it’s a one-time deep clean or regular maintenance, our experienced cleaners take care of it all with professionalism and attention to detail. '
+              'We use eco-friendly, non-toxic cleaning products that are safe for children, pets, and the environment.',
+              style: TextStyle(
+                color: Color(0xff284a79),
+                fontSize: 16.0,
+                fontWeight: FontWeight.w500,
               ),
             ),
           ],
