@@ -12,7 +12,7 @@ class _BookPageState extends State<BookPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        margin: EdgeInsets.only(top: 40.0, left: 17.0),
+        margin: EdgeInsets.only(top: 40.0, left: 17.0, right: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -32,7 +32,10 @@ class _BookPageState extends State<BookPage> {
                 ),
               ),
             ),
+            SizedBox(height: 20.0),
             Container(
+              padding: EdgeInsets.only(left: 10.0, top: 10.0),
+              width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
@@ -42,17 +45,63 @@ class _BookPageState extends State<BookPage> {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                 ),
+                borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Home Cleaning BookingPage',
-                    style: TextStyle(
-                      color: Color(0xff284a79),
-                      fontSize: 25.0,
-                      fontWeight: FontWeight.bold,
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Cleaning bookpage',
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 25.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            'by Shivsni Sharea',
+                            style: TextStyle(
+                              color: Color(0xff284a79),
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 20.0),
+                      Container(
+                        padding: EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Text(
+                          "₦2500/Hr",
+                          style: TextStyle(
+                            color: Color(0xff284a79),
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10.0),
+                  ClipRRect(
+                    borderRadius: BorderRadiusGeometry.circular(10),
+                    child: Image.asset(
+                      "asset/images/post.jpg",
+                      height: 170,
+                      width: 120,
+                      fit: BoxFit.cover,
                     ),
                   ),
+                  SizedBox(height: 20.0),
                 ],
               ),
             ),
