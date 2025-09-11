@@ -92,16 +92,44 @@ class _BookPageState extends State<BookPage> {
                     ],
                   ),
                   SizedBox(height: 10.0),
-                  ClipRRect(
-                    borderRadius: BorderRadiusGeometry.circular(10),
-                    child: Image.asset(
-                      "asset/images/post.jpg",
-                      height: 170,
-                      width: 120,
-                      fit: BoxFit.cover,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            "asset/images/post.jpg",
+                            height: 170,
+                            width: 120,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            "asset/images/dow.jpeg",
+                            height: 170,
+                            width: 120,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            "asset/images/do.jpeg",
+                            height: 170,
+                            width: 120,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   SizedBox(height: 20.0),
+                  
                 ],
               ),
             ),
