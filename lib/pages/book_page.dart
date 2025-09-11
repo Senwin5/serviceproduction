@@ -143,6 +143,22 @@ class _BookPageState extends State<BookPage> {
                 fontWeight: FontWeight.w500,
               ),
             ),
+            SizedBox(height: 20.0,),
+            Row(
+              children: [
+                Container(
+                  decoration: BoxDecoration(color: Colors.white),
+                  child: Icon(Icons.alarm, color: Colors.black, size: 30.0)),
+                Text(
+                  '10:AM',
+                  style: TextStyle(
+                    color: Color(0xff284a79),
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
