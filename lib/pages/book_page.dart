@@ -43,6 +43,18 @@ class _BookPageState extends State<BookPage> {
                   end: Alignment.bottomLeft,
                 ),
               ),
+              child: Column(
+                children: [
+                  Text(
+                    'Home Cleaning BookingPage',
+                    style: TextStyle(
+                      color: Color(0xff284a79),
+                      fontSize: 25.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
