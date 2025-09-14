@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:serviceproduction/pages/book_page.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -306,20 +307,32 @@ class _HomeState extends State<Home> {
                           ),
                           //Copying the container and paste again
                           SizedBox(width: 20.0),
-                          Container(
-                            //width: 0,
-                            padding: EdgeInsets.all(5),
-                            decoration: BoxDecoration(
-                              color: Color(0xff284a79),
-                              borderRadius: BorderRadius.circular(5),
-                            ),
-                            child: Center(
-                              child: Text(
-                                "Book Now",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.bold,
+                          //To make ths 'book now button to work we need to convert the container
+                          //To GestureDetectore then us the onTap navigator
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => BookPage(),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              //width: 0,
+                              padding: EdgeInsets.all(5),
+                              decoration: BoxDecoration(
+                                color: Color(0xff284a79),
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Book Nowm",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),

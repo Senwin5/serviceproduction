@@ -20,6 +20,7 @@ class _BottomNameNavState extends State<BottomNameNav> {
   late Order order;
   late ChatPage chatPage;
   late ProfilePage profilePage;
+  
 
   int currentTabIndex = 0;
 
@@ -31,18 +32,18 @@ class _BottomNameNavState extends State<BottomNameNav> {
     order = Order();
     chatPage = ChatPage();
     profilePage = ProfilePage();
-    pages = [home, order, chatPage, profilePage];
+    pages = [home, order, chatPage,profilePage];
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar:CurvedNavigationBar(
+      bottomNavigationBar: CurvedNavigationBar(
         height: 70,
         backgroundColor: Colors.white,
-        color:Color(0xff284a79),
-        animationDuration: Duration(milliseconds: 400),
+        color: Color(0xff284a79),
+        animationDuration: Duration(milliseconds: 200),
         onTap: (int index) {
           setState(() {
             currentTabIndex = index;
@@ -52,6 +53,7 @@ class _BottomNameNavState extends State<BottomNameNav> {
           Icon(Icons.home_outlined, color: Colors.white, size: 25.0),
           Icon(Icons.shop_outlined, color: Colors.white, size: 25.0),
           Icon(Icons.chat_outlined, color: Colors.white, size: 25.0),
+          Icon(Icons.outbox_rounded, color: Colors.white, size: 25.0),
           Icon(Icons.person, color: Colors.white, size: 25.0),
         ],
       ),
