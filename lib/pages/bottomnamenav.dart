@@ -53,7 +53,6 @@ class _BottomNameNavState extends State<BottomNameNav> {
           Icon(Icons.home_outlined, color: Colors.white, size: 25.0),
           Icon(Icons.shop_outlined, color: Colors.white, size: 25.0),
           Icon(Icons.chat_outlined, color: Colors.white, size: 25.0),
-          Icon(Icons.outbox_rounded, color: Colors.white, size: 25.0),
           Icon(Icons.person, color: Colors.white, size: 25.0),
         ],
       ),

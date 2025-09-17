@@ -48,7 +48,7 @@ class _BookPageState extends State<BookPage> {
                   ),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
+               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(

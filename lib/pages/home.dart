@@ -308,7 +308,7 @@ class _HomeState extends State<Home> {
                           //Copying the container and paste again
                           SizedBox(width: 20.0),
                           //To make ths 'book now button to work we need to convert the container
-                          //To GestureDetectore then us the onTap navigator
+                          //To GestureDetector then use the onTap navigator
                           GestureDetector(
                             onTap: () {
                               Navigator.push(
