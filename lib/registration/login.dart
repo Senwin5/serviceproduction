@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
             SizedBox(height: 50.0),
             Padding(
               padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-              child: Row( 
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
