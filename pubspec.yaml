@@ -33,7 +33,7 @@ flutter:
   # Add assets to your application.
   assets:
     - asset/images/
-    # - images/a_dot_ham.jpeg
+    - asset/register/
 
   # An image asset can refer to one or more resolution-specific "variants":
   # https://flutter.dev/to/resolution-aware-images
