@@ -3,6 +3,7 @@ import 'package:serviceproduction/pages/book_page.dart';
 import 'package:serviceproduction/pages/bottomnamenav.dart';
 import 'package:serviceproduction/pages/home.dart';
 import 'package:serviceproduction/registration/login.dart';
+import 'package:serviceproduction/registration/signup.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
       //home: Home(),
       //home: BottomNameNav(),
       //home: BookPage(),
-      home: Login()
+       //home: Login(),
+       home: Signup(),
     );
   }
 }

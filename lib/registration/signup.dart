@@ -1,23 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:serviceproduction/registration/signup.dart';
+import 'package:serviceproduction/registration/login.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class Signup extends StatefulWidget {
+  const Signup({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<Signup> createState() => _SignupState();
 }
 
-class _LoginState extends State<Login> {
+class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffefeeed),
       body: Container(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset("asset/register/signin.png"),
+            Image.asset("asset/register/login.jpg"),
+            SizedBox(height: 30.0),
+            Padding(
+              padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Full Name:',
+                  hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
+                ),
+              ),
+            ),
             SizedBox(height: 30.0),
             Padding(
               padding: const EdgeInsets.only(left: 40.0, right: 40.0),
@@ -38,31 +47,14 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            SizedBox(height: 20.0),
-            Padding(
-              padding: const EdgeInsets.only(right: 40.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    'Forgot Password',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 50.0),
+            SizedBox(height: 40.0),
             Padding(
               padding: const EdgeInsets.only(left: 30.0, right: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Sign In',
+                    'Sign Up',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 32.0,
@@ -75,7 +67,7 @@ class _LoginState extends State<Login> {
                     child: Container(
                       padding: EdgeInsets.all(10),
                       decoration: BoxDecoration(
-                        color: Color(0xffea6d35),
+                        color: Color(0xff3a6484),
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: Icon(
@@ -93,7 +85,7 @@ class _LoginState extends State<Login> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Don't have an account?",
+                  'Already have an account?',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 16.0,
@@ -102,13 +94,10 @@ class _LoginState extends State<Login> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => Signup()),
-                    );
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Login(),),);
                   },
                   child: Text(
-                    ' Sign Up',
+                    ' Login',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 18.0,
