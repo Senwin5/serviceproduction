@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:random_string/random_string.dart';
 import 'package:serviceproduction/registration/login.dart';
+import 'package:firebase_auth/firebase_auth.dart'; 
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -9,12 +11,44 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  //Adding firebase auth to the sign up page in flutter after configuring the main.dart file...
+  // Adding firebase auth to the sign up page in flutter after configuring the main.dart file...
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
   String? fullName, email, password;
+
+  registration() async {
+    if (emailController.text != "" &&
+        passwordController.text != "" &&
+        fullNameController.text != "") {
+
+      email = emailController.text.trim();
+      password = passwordController.text.trim();
+      fullName = fullNameController.text.trim();
+
+      try {
+        UserCredential userCredential =
+            await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: email!,
+          password: password!,
+        );
+
+        String id = randomAlphaNumeric(10);
+        Map<String, dynamic> userInfoMap = {
+          "email": emailController.text,
+          "id": id,
+          "fullName": fullNameController.text,
+        };
+
+      } catch (e) {
+        print("Error during registration: $e");
+      }
+    }
+  }
+}
+
+  
 
   @override
   Widget build(BuildContext context) {
