@@ -1,4 +1,4 @@
-package com.example.serviceproduction
+package com.senwin.serviceproduction
 
 import io.flutter.embedding.android.FlutterActivity
 
