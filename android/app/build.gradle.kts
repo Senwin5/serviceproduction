@@ -8,7 +8,9 @@ plugins {
 android {
     namespace = "com.senwin.serviceproduction"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+
+    // ✅ Use the correct NDK version required by Firebase packages
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -21,7 +23,7 @@ android {
 
     defaultConfig {
         applicationId = "com.senwin.serviceproduction"
-        minSdk = 23 // 🔥 FIXED HERE
+        minSdk = 23 // ✅ Firebase requires at least API level 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -39,9 +41,9 @@ flutter {
 }
 
 dependencies {
-    // ✅ Firebase BoM for managing versions
+    // ✅ Firebase BoM for managing consistent versions
     implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
 
-    // ✅ Example Firebase library
+    // ✅ Firebase libraries (add more as needed)
     implementation("com.google.firebase:firebase-analytics")
 }

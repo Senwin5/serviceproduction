@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:serviceproduction/pages/book_page.dart';
 import 'package:serviceproduction/pages/bottomnamenav.dart';
@@ -5,7 +6,10 @@ import 'package:serviceproduction/pages/home.dart';
 import 'package:serviceproduction/registration/login.dart';
 import 'package:serviceproduction/registration/signup.dart';
 
-void main() {
+//After adding firebase independences now is to configure the firebase
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -24,8 +28,8 @@ class MyApp extends StatelessWidget {
       //home: Home(),
       //home: BottomNameNav(),
       //home: BookPage(),
-       //home: Login(),
-       home: Signup(),
+      //home: Login(),
+      home: Signup(),
     );
   }
 }

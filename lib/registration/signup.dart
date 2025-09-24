@@ -9,6 +9,13 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
+  //Adding firebase auth to the sign up page in flutter after configuring the main.dart file...
+  final TextEditingController fullNameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  String? fullName, email, password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +101,10 @@ class _SignupState extends State<Signup> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Login(),),);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Login()),
+                    );
                   },
                   child: Text(
                     ' Login',
