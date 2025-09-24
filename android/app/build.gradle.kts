@@ -21,7 +21,7 @@ android {
 
     defaultConfig {
         applicationId = "com.senwin.serviceproduction"
-        minSdk = flutter.minSdkVersion
+        minSdk = 23 // 🔥 FIXED HERE
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -39,9 +39,9 @@ flutter {
 }
 
 dependencies {
-    // ✅ Add the Firebase BoM (Bill of Materials) — Manages Firebase library versions
+    // ✅ Firebase BoM for managing versions
     implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
 
-    // ✅ Example Firebase dependency (add the ones you need)
+    // ✅ Example Firebase library
     implementation("com.google.firebase:firebase-analytics")
 }
