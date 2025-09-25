@@ -149,6 +149,20 @@ class _SignupState extends State<Signup> {
                           password = passwordController.text.trim();
                           fullName = fullNameController.text.trim();
                         });
+                        registration();
+                      } else {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            backgroundColor: Colors.red,
+                            content: Text(
+                              "Please fill complete details",
+                              style: TextStyle(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        );
                       }
                     },
                     child: Material(
