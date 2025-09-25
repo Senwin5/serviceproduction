@@ -28,11 +28,8 @@ class _SignupState extends State<Signup> {
       fullName = fullNameController.text.trim();
 
       try {
-        UserCredential userCredential =
-            await FirebaseAuth.instance.createUserWithEmailAndPassword(
-          email: email!,
-          password: password!,
-        );
+        UserCredential userCredential = await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email!, password: password!);
 
         String id = randomAlphaNumeric(10);
         Map<String, dynamic> userInfoMap = {
@@ -52,12 +49,12 @@ class _SignupState extends State<Signup> {
             ),
           ),
         );
-//Adding Navigator to push it forward
+        //Adding Navigator to push it forward
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const BottomNameNav()),
         );
-  //Adding the if conditions to the auth firebase
+        //Adding the if conditions to the auth firebase
       } on FirebaseAuthException catch (e) {
         String errorMsg = "";
         if (e.code == "weak-password") {
@@ -73,10 +70,7 @@ class _SignupState extends State<Signup> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: Colors.red,
-            content: Text(
-              errorMsg,
-              style: const TextStyle(fontSize: 16.0),
-            ),
+            content: Text(errorMsg, style: const TextStyle(fontSize: 16.0)),
           ),
         );
       }
@@ -89,8 +83,6 @@ class _SignupState extends State<Signup> {
       );
     }
   }
-        
-  
 
   @override
   Widget build(BuildContext context) {
@@ -147,19 +139,32 @@ class _SignupState extends State<Signup> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  Material(
-                    elevation: 5.0,
-                    borderRadius: BorderRadius.circular(30),
-                    child: Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        color: Color(0xff3a6484),
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Icon(
-                        Icons.arrow_forward_outlined,
-                        color: Colors.white,
-                        size: 30.0,
+                  GestureDetector(
+                    onTap: () {
+                      if (passwordController.text != "" &&
+                          emailController.text != "" &&
+                          fullNameController.text != "") {
+                        setState(() {
+                          email = emailController.text.trim();
+                          password = passwordController.text.trim();
+                          fullName = fullNameController.text.trim();
+                        });
+                      }
+                    },
+                    child: Material(
+                      elevation: 5.0,
+                      borderRadius: BorderRadius.circular(30),
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: Color(0xff3a6484),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Icon(
+                          Icons.arrow_forward_outlined,
+                          color: Colors.white,
+                          size: 30.0,
+                        ),
                       ),
                     ),
                   ),
@@ -201,3 +206,4 @@ class _SignupState extends State<Signup> {
       ),
     );
   }
+}
