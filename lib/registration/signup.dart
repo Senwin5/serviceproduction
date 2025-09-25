@@ -17,6 +17,8 @@ class _SignupState extends State<Signup> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
+  bool _isPasswordHidden = true; // ✅ Correct placement
+
   String? fullName, email, password;
 
   registration() async {
@@ -49,12 +51,11 @@ class _SignupState extends State<Signup> {
             ),
           ),
         );
-        //Adding Navigator to push it forward
+
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => const BottomNameNav()),
         );
-        //Adding the if conditions to the auth firebase
       } on FirebaseAuthException catch (e) {
         String errorMsg = "";
         if (e.code == "weak-password") {
@@ -88,13 +89,13 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xffefeeed),
-      body: Container(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset("asset/register/login.jpg"),
             SizedBox(height: 30.0),
             Padding(
-              padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: fullNameController,
                 decoration: InputDecoration(
@@ -105,7 +106,7 @@ class _SignupState extends State<Signup> {
             ),
             SizedBox(height: 30.0),
             Padding(
-              padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: emailController,
                 decoration: InputDecoration(
@@ -116,18 +117,32 @@ class _SignupState extends State<Signup> {
             ),
             SizedBox(height: 30.0),
             Padding(
-              padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+              padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: passwordController,
+                obscureText: _isPasswordHidden,
                 decoration: InputDecoration(
                   hintText: 'Password:',
                   hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      _isPasswordHidden
+                          ? Icons.visibility_off
+                          : Icons.visibility,
+                      color: Colors.grey,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _isPasswordHidden = !_isPasswordHidden;
+                      });
+                    },
+                  ),
                 ),
               ),
             ),
             SizedBox(height: 40.0),
             Padding(
-              padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+              padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
