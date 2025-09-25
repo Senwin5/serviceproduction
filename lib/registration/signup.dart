@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:random_string/random_string.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:serviceproduction/pages/bottomnamenav.dart';
+import 'package:serviceproduction/services/database.dart';
 import 'package:serviceproduction/registration/login.dart';
-import 'package:firebase_auth/firebase_auth.dart'; 
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -11,7 +13,6 @@ class Signup extends StatefulWidget {
 }
 
 class _SignupState extends State<Signup> {
-  // Adding firebase auth to the sign up page in flutter after configuring the main.dart file...
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
@@ -22,7 +23,6 @@ class _SignupState extends State<Signup> {
     if (emailController.text != "" &&
         passwordController.text != "" &&
         fullNameController.text != "") {
-
       email = emailController.text.trim();
       password = passwordController.text.trim();
       fullName = fullNameController.text.trim();
@@ -36,18 +36,60 @@ class _SignupState extends State<Signup> {
 
         String id = randomAlphaNumeric(10);
         Map<String, dynamic> userInfoMap = {
-          "email": emailController.text,
+          "email": email,
           "id": id,
-          "fullName": fullNameController.text,
+          "fullName": fullName,
         };
 
-      } catch (e) {
-        print("Error during registration: $e");
+        await DatabaseMethod().addUserDetail(userInfoMap, id);
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            backgroundColor: Colors.green,
+            content: Text(
+              "Registered Successfully",
+              style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
+            ),
+          ),
+        );
+//Adding Navigator to push it forward
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const BottomNameNav()),
+        );
+  //Adding the if conditions to the auth firebase
+      } on FirebaseAuthException catch (e) {
+        String errorMsg = "";
+        if (e.code == "weak-password") {
+          errorMsg = "The password provided is too weak.";
+        } else if (e.code == "email-already-in-use") {
+          errorMsg = "The account already exists for that email.";
+        } else if (e.code == "invalid-email") {
+          errorMsg = "The email address is badly formatted.";
+        } else {
+          errorMsg = e.message ?? "An error occurred";
+        }
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              errorMsg,
+              style: const TextStyle(fontSize: 16.0),
+            ),
+          ),
+        );
       }
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          backgroundColor: Colors.orange,
+          content: Text("Please fill all fields"),
+        ),
+      );
     }
   }
-}
-
+        
   
 
   @override
@@ -62,6 +104,7 @@ class _SignupState extends State<Signup> {
             Padding(
               padding: const EdgeInsets.only(left: 40.0, right: 40.0),
               child: TextField(
+                controller: fullNameController,
                 decoration: InputDecoration(
                   hintText: 'Full Name:',
                   hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
@@ -72,6 +115,7 @@ class _SignupState extends State<Signup> {
             Padding(
               padding: const EdgeInsets.only(left: 40.0, right: 40.0),
               child: TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   hintText: 'Email:',
                   hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
@@ -82,6 +126,7 @@ class _SignupState extends State<Signup> {
             Padding(
               padding: const EdgeInsets.only(left: 40.0, right: 40.0),
               child: TextField(
+                controller: passwordController,
                 decoration: InputDecoration(
                   hintText: 'Password:',
                   hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
@@ -156,4 +201,3 @@ class _SignupState extends State<Signup> {
       ),
     );
   }
-}
