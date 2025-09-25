@@ -16,6 +16,7 @@ class _HomeState extends State<Home> {
         title: Text("Services", style: TextStyle(color: Colors.white)),
         backgroundColor: Color(0xff284a79), // Optional: make it visible
         elevation: 4,
+        automaticallyImplyLeading: false,  // This removes the back arrow
       ),
       body: SingleChildScrollView(
         child: Column(
