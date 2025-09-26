@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:serviceproduction/pages/bottomnamenav.dart';
 import 'package:serviceproduction/registration/signup.dart';
 
 class Login extends StatefulWidget {
@@ -9,6 +11,43 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  //Integrating firebase auth to the app
+  String? email, password;
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
+  userLogin() async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: email!,
+        password: password!,
+      );
+
+      Navigator.popAndPushNamed(
+        context,
+        MaterialPageRoute(builder: (context) => BottomNameNav()),
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        String errorMsg = "";
+        if (e.code == "user-not-found") {
+          errorMsg = "No user found for that email.";
+        } else if (e.code == "invalid-email") {
+          errorMsg = "The email address is badly formatted.";
+        } else {
+          errorMsg = e.message ?? "An error occurred";
+        }
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(errorMsg, style: const TextStyle(fontSize: 16.0)),
+          ),
+        );
+      }
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
