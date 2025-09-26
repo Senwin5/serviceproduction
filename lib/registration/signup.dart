@@ -147,7 +147,7 @@ class _SignupState extends State<Signup> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Sign Up',
+                    'Sign Up 54',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 32.0,
