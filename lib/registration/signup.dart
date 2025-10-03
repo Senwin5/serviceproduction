@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:random_string/random_string.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -19,7 +17,7 @@ class _SignupState extends State<Signup> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
 
-  bool _isPasswordHidden = true; // ✅ Correct placement
+  bool _isPasswordHidden = true;
 
   String? fullName, email, password;
 
@@ -35,6 +33,13 @@ class _SignupState extends State<Signup> {
         UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email!, password: password!);
 
+        User? user = userCredential.user;
+
+        // ✅ Save fullName as displayName in FirebaseAuth
+        await user?.updateDisplayName(fullName);
+        await user?.reload();
+
+        // Store additional details in your own database if needed
         String id = randomAlphaNumeric(10);
         Map<String, dynamic> userInfoMap = {
           "email": email,
@@ -90,34 +95,41 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffefeeed),
+      backgroundColor: const Color(0xffefeeed),
       body: SingleChildScrollView(
         child: Column(
           children: [
             Image.asset("asset/register/login.jpg"),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
+
+            // Full Name
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: fullNameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Full Name:',
                   hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
                 ),
               ),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
+
+            // Email
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
                 controller: emailController,
-                decoration: InputDecoration(
+                keyboardType: TextInputType.emailAddress,
+                decoration: const InputDecoration(
                   hintText: 'Email:',
                   hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
                 ),
               ),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
+
+            // Password
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 40.0),
               child: TextField(
@@ -125,7 +137,8 @@ class _SignupState extends State<Signup> {
                 obscureText: _isPasswordHidden,
                 decoration: InputDecoration(
                   hintText: 'Password:',
-                  hintStyle: TextStyle(color: Colors.black54, fontSize: 25.0),
+                  hintStyle:
+                      const TextStyle(color: Colors.black54, fontSize: 25.0),
                   suffixIcon: IconButton(
                     icon: Icon(
                       _isPasswordHidden
@@ -142,13 +155,15 @@ class _SignupState extends State<Signup> {
                 ),
               ),
             ),
-            SizedBox(height: 40.0),
+            const SizedBox(height: 40.0),
+
+            // Sign Up Button
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
+                  const Text(
                     'Sign Up',
                     style: TextStyle(
                       color: Colors.black,
@@ -186,12 +201,12 @@ class _SignupState extends State<Signup> {
                       elevation: 5.0,
                       borderRadius: BorderRadius.circular(30),
                       child: Container(
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Color(0xff3a6484),
+                          color: const Color(0xff3a6484),
                           borderRadius: BorderRadius.circular(30),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_forward_outlined,
                           color: Colors.white,
                           size: 30.0,
@@ -202,11 +217,13 @@ class _SignupState extends State<Signup> {
                 ],
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
+
+            // Already have an account? Login
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   'Already have an account?',
                   style: TextStyle(
                     color: Colors.black,
@@ -218,10 +235,10 @@ class _SignupState extends State<Signup> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => Login()),
+                      MaterialPageRoute(builder: (context) => const Login()),
                     );
                   },
-                  child: Text(
+                  child: const Text(
                     ' Login',
                     style: TextStyle(
                       color: Colors.black,

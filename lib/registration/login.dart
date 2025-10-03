@@ -33,18 +33,22 @@ class _LoginState extends State<Login> {
         password: password!,
       );
 
+      final user = credential.user;
+      await user?.reload(); // refresh user info
+      String username = user?.displayName ?? "User";
+
       // Show Welcome Back message
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           backgroundColor: Colors.green,
           content: Text(
-            "Welcome back :( ",
+            "Welcome back, $username!",
             style: const TextStyle(fontSize: 16.0),
           ),
-          duration: const Duration(seconds: 1),
+          duration: const Duration(seconds: 2),
         ),
       );
-  
+
       // Small delay so user sees the SnackBar before navigation
       await Future.delayed(const Duration(milliseconds: 500));
 
