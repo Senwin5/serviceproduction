@@ -1,6 +1,7 @@
 #https://pub.dev/packages/curved_navigation_bar/install
 #https://pub.dev/packages/firebase_core/install
 # Miscellaneous
+
 *.class
 *.log
 *.pyc
@@ -31,6 +32,8 @@ migrate_working_dir/
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
+.vscode/
+.vscode/
 .pub-cache/
 .pub/
 /build/
