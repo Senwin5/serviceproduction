@@ -25,7 +25,7 @@ android {
 
     defaultConfig {
         applicationId = "com.senwin.serviceproduction"
-        minSdk = 23 // ✅ Firebase requires at least API 23
+        minSdk = flutter.minSdkVersion // ✅ Firebase requires at least API 23
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName

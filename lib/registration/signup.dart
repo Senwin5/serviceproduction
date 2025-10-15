@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:random_string/random_string.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -138,8 +137,10 @@ class _SignupState extends State<Signup> {
                 obscureText: _isPasswordHidden,
                 decoration: InputDecoration(
                   hintText: 'Password:',
-                  hintStyle:
-                      const TextStyle(color: Colors.black54, fontSize: 25.0),
+                  hintStyle: const TextStyle(
+                    color: Colors.black54,
+                    fontSize: 25.0,
+                  ),
                   suffixIcon: IconButton(
                     icon: Icon(
                       _isPasswordHidden
