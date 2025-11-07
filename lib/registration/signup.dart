@@ -49,6 +49,7 @@ class _SignupState extends State<Signup> {
 
         await DatabaseMethod().addUserDetail(userInfoMap, id);
 
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             backgroundColor: Colors.green,
@@ -60,6 +61,7 @@ class _SignupState extends State<Signup> {
         );
 
         Navigator.pushReplacement(
+          // ignore: use_build_context_synchronously
           context,
           MaterialPageRoute(builder: (context) => const BottomNameNav()),
         );
@@ -75,6 +77,7 @@ class _SignupState extends State<Signup> {
           errorMsg = e.message ?? "An error occurred";
         }
 
+        // ignore: use_build_context_synchronously
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             backgroundColor: Colors.red,

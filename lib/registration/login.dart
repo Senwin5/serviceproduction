@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:serviceproduction/pages/bottomnamenav.dart';
 import 'package:serviceproduction/registration/signup.dart';
@@ -38,6 +39,7 @@ class _LoginState extends State<Login> {
       String username = user?.displayName ?? "User";
 
       // Show Welcome Back message
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           backgroundColor: Colors.green,
@@ -54,13 +56,16 @@ class _LoginState extends State<Login> {
 
       // Navigate to BottomNameNav after successful login
       Navigator.pushReplacement(
+        // ignore: use_build_context_synchronously
         context,
         MaterialPageRoute(builder: (context) => BottomNameNav()),
       );
     } on FirebaseAuthException catch (e) {
       String errorMsg = "";
 
-      print('FirebaseAuthException caught: ${e.code}');
+      if (kDebugMode) {
+        print('FirebaseAuthException caught: ${e.code}');
+      }
 
       if (e.code == "user-not-found") {
         errorMsg = "No user found for that email.";
@@ -72,6 +77,7 @@ class _LoginState extends State<Login> {
         errorMsg = e.message ?? "An unexpected error occurred.";
       }
 
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           backgroundColor: Colors.red,
@@ -79,7 +85,10 @@ class _LoginState extends State<Login> {
         ),
       );
     } catch (e) {
-      print('Non-Firebase exception: $e');
+      if (kDebugMode) {
+        print('Non-Firebase exception: $e');
+      }
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
           backgroundColor: Colors.red,
