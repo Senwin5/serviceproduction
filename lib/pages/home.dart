@@ -328,7 +328,7 @@ class _HomeState extends State<Home> {
                               ),
                               child: Center(
                                 child: Text(
-                                  "Book Now",
+                                  "Book Nowm",
                                   style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 16.0,
